@@ -20,15 +20,15 @@ This integration is based on an Alfresco Web Script that accepts an *HTTP POST* 
 
 ```json
 {
-	'source_path': 'aspera/a/b/c/123123123123.bin',
-	'mime-type': 'video/mp4',
-	'size': '5000000',
-	'encoding': 'UTF-8',
-	'locale': 'en_US_',
-	'properties': {
-			'cm:title':My Title',
-			'cm:name': 'my_file.mp4',
-			'cm:description': 'This is my description'
+	"source_path": "aspera/a/b/c/123123123123.bin",
+	"mime-type": "video/mp4",
+	"size": "5000000",
+	"encoding": "UTF-8",
+	"locale": "en_US_",
+	"properties": {
+			"cm:title": "My Title",
+			"cm:name": "my_file.mp4",
+			"cm:description": "This is my description"
 		}
 }
 ```
@@ -52,9 +52,20 @@ On success, the REST endpoint will respond with a 200 code and a JSON response a
 
 ```json
 {
-'status':'200',
-'message':'OK',
-'request_body':{"source_path":"fasp/test.txt","locale":"en_US_","encoding":"UTF-8","properties":{"cm:description":"This is my description","cm:name":"my_file3.txt","cm:title":"My Title"},"mime-type":"text/plain","size":"12"}
+"status":"200",
+"message":"OK",
+"request_body":{
+	"source_path":"fasp/test.txt",
+	"locale":"en_US_",
+	"encoding":"UTF-8",
+	"properties":{
+		"cm:description":"This is my description",
+		"cm:name":"my_file3.txt",
+		"cm:title":"My Title"},
+		"mime-type":"text/plain",
+		"size":"12"
+		}
+	}
 }
 ```
 
