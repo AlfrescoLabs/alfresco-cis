@@ -41,7 +41,7 @@ This integration is based on an Alfresco Web Script that accepts an *HTTP POST* 
 
 *properties:* The keys in the `properties` hash must have a direct mapping in the corresponding Alfresco content model. The current implementation is rather simplistic and merely assumes the newly created content object is of type `cm:content`.
 
-** The filename of the newly created ibject will be derived from th `cm:name` property.
+** The filename of the newly created object will be derived from th `cm:name` property.
 
 #### Updating Existing Content
 *NOT YET IMPLEMENTED*
