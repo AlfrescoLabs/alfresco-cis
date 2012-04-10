@@ -1,0 +1,12 @@
+{
+	'source_path': 'aspera/a/b/c/123123123123.bin',
+	'mime-type': 'video/mp4',
+	'size': '5000000',
+	'encoding': 'UTF-8',
+	'locale': 'en_US_',
+	'properties': {
+			'cm:title': 'My Title',
+			'cm:name': 'my_file.mp4',
+			'cm:description': 'This is my description'
+		}
+}

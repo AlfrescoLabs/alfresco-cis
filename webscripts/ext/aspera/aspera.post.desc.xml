@@ -1,0 +1,9 @@
+<webscript>
+  <shortname>Aspera FASP Integration</shortname>
+  <description>Creates a new content object with the supplied content path and metadata properties.</description>
+  <url>/ext/fasp/path/{path}</url> 
+  <url>/ext/fasp/node/{store_type}/{store_id}/{node_id}</url> 
+  <format default="json">argument</format>
+  <authentication>user</authentication>
+  <transaction>required</transaction>
+</webscript>
