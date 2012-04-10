@@ -14,7 +14,7 @@ The Alfresco-Aspera Content Importer allows an Aspera FASP server to add new con
 #### Creating New Content
 
 #### REST Endpoints
-There are two REST endpoints (`/ext/fasp/node/{node_id}` and `/ext/fasp/path/{path}`), one supporting a parent NodeId and the other supporting a parent path relative to the repository root folder (Company Home). It is assumed that the content is going to the default store (workspace://SpacesStore) and that the parent object is of type `cm:folder`.
+There are two REST endpoints (`/ext/fasp/node/{space_type}/{store_id}/{node_id}` and `/ext/fasp/path/{path}`), one supporting a parent NodeId and the other supporting a parent path relative to the repository root folder (Company Home). It is assumed that the parent object is of type `cm:folder`.
 
 This integration is based on an Alfresco Web Script that accepts an *HTTP POST* with a JSON payload that comforms to the following specification:
 
