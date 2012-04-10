@@ -35,17 +35,18 @@ This integration is based on an Alfresco Web Script that accepts an *HTTP POST* 
 
 ##### Property Requirements
 
-*source_path:* The `source_path` property must be both *unique* and *relative* to the Alfresco Content Store directory path as defined via the Alfresco `dir.root` and/or `dir.contentstore` configuration properties.
+**source_path:** The `source_path` property must be both *unique* and *relative* to the Alfresco Content Store directory path as defined via the Alfresco `dir.root` and/or `dir.contentstore` configuration properties.
 
-*size:* The `size` property must be expressed in bytes.
+**size:** The `size` property must be expressed in bytes.
 
-*properties:* The keys in the `properties` hash must have a direct mapping in the corresponding Alfresco content model. The current implementation is rather simplistic and merely assumes the newly created content object is of type `cm:content`.
+**properties:** The keys in the `properties` hash must have a direct mapping in the corresponding Alfresco content model. The current implementation is rather simplistic and merely assumes the newly created content object is of type `cm:content`.
 
-** The filename of the newly created object will be derived from the `cm:name` property.
+	* The filename of the newly created object will be derived from the `cm:name` property.
 
 #### Updating Existing Content
 *NOT YET IMPLEMENTED*
-Existing content may be updated by using an HTTP PUT with a newly assigned and *unique* `source_path` property value. Updated metadata properties may also be supplied though the `cm:name` property will be ignored. This is not a limitation, rather an implementation choice.
+
+Existing content may be updated by using an HTTP PUT with a newly assigned and *unique* `source_path` property value. Updated metadata properties may also be supplied.
 
 #### Response
 On success, the REST endpoint will respond with a 200 code and a JSON response as follows:
@@ -82,4 +83,4 @@ This project requires an Alfresco Server running version 3.X or above.
 
   * Deploy the projects' WebScripts to the Alfresco server as noted in the Alfresco documentation.
 
-Copyright (c) 2012, Alfresco Software - All Rights Reserved
+*Copyright (c) 2012, Alfresco Software - All Rights Reserved*
