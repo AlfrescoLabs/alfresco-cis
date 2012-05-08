@@ -18,7 +18,11 @@ The Alfresco Content Importer allows a client to add new content into an Alfresc
 There are two REST endpoints (`/ext/cis/node/{space_type}/{store_id}/{node_id}` and `/ext/cis/path/{path}`), one supporting a parent NodeId and the other supporting a parent path relative to the repository root folder (Company Home). It is assumed that the parent object is of type `cm:folder`.
 
 This integration is based on an Alfresco Web Script that accepts an *HTTP POST* with a JSON payload that comforms to the following specification:
+##### Request Headers
+The following HTTP header is mandatory:
+`Content-Type: application/json`
 
+##### Request Body
 ```json
 {
 	"source_path": "cis/a/b/c/123123123123.bin",
@@ -98,5 +102,14 @@ This project requires an Alfresco Server running version 3.X or above.
 This importer will eventually be packaged as an Alfresco AMP. In the interim, it can be deployed by copying the `webscripts` directory (and all its contents) to `[ALFRESCO_HOME]/tomcat/shared/classes/alfresco/extension/templates`.
 
 **Note:** The `templates` directory will not exist on new installations so please create it prior to copying.
+
+### Sample Invocation with CURL:
+
+The following example demonstrates how to invoke the service via cUrl. Note the use of the `Content-Type: application/json` header.
+
+```bash
+$ curl -i -H "Content-Type: application/json" -X POST -d @test.json http://admin:admin@localhost:8080/alfresco/s/ext/cis/node/workspace/SpacesStore/e400f07a-3b69-47f5-b2f1-9470a0d168b3
+```
+
 
 *Copyright (c) 2012, Alfresco Software - All Rights Reserved*

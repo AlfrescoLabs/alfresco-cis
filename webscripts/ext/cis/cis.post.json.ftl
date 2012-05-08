@@ -1,5 +1,6 @@
 {
-'status':'${code}',
-'message':'${message}',
-'request_body':${req_json}
+"status":"${statusCode}",
+"message":"${statusMessage}",
+"nodeRef":"${nodeRef}",
+"request_body":${req_json}
 }

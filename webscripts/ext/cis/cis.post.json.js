@@ -1,10 +1,14 @@
 /*
-Alfresco-Aspera Importer
+Alfresco Content Import Service
 Copyright (c) 2012, Alfresco Software - All Rights Reserved
 Author: Luis Sala - luis.sala@alfresco.com
 */
 
 var folder = null;
+var nodeRef = "null";
+
+var statusCode = 200;
+var statusMessage = "Unknown";
 
 // Determine how this script was invoked, whether by path or nodeRef
 if (url.templateArgs['path']) {
@@ -47,16 +51,22 @@ if (folder) {
 	}
 	
 	doc.save();
+	
+	nodeRef = doc.nodeRef;
 		
-	status.code = 200;
-	status.message = 'OK';
+	statusCode = 200;
+	statusMessage = 'OK';
 
 } else {
 	// The folder was not found, so return a 404.
-	status.code = 404;
-	status.message = "Node not Found";
+	statusCode = 404;
+	statusMessage = "Parent Node/Folder not Found";
 }
 
-model.code = status.code;
-model.message = status.message;
+model.statusCode = statusCode;
+model.statusMessage = statusMessage;
+model.nodeRef = nodeRef;
 model.req_json = json;
+
+status.code = statusCode;
+status.message = statusMessage;
